@@ -22,7 +22,7 @@ public class Game {
             }, 
             // rest of the Intearctions as parameters
             new Interaction("interact", player -> {
-                System.out.print("interact!");
+                System.out.println("interact!");
                 return true;
             }));
         // create map object once all the Locations are defined
