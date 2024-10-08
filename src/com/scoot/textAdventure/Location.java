@@ -1,5 +1,6 @@
 package com.scoot.textAdventure;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import com.scoot.textAdventure.interactions.EntranceInteraction;
@@ -16,6 +17,10 @@ public class Location {
         for (int i = 0; i < interactions.length; i++) {
             k_interactions.put(interactions[i].getCommand(), interactions[i]);
         }
+    }
+
+    public Collection<Interaction> getInteractions() {
+        return k_interactions.values();
     }
 
     public boolean enter(Player player) {

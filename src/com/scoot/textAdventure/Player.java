@@ -7,12 +7,14 @@ public class Player {
     private final ArrayList<Feat> m_feats;
 
     private CoordinatePair m_currentLocation;
+    private boolean m_alive;
 
     public Player(CoordinatePair defaultLocation) {
-        m_currentLocation = defaultLocation;
-        
         m_inventory = new ArrayList<Item>();
         m_feats = new ArrayList<Feat>();
+
+        m_currentLocation = defaultLocation;
+        m_alive = true;
     }
 
     /**
@@ -70,5 +72,19 @@ public class Player {
             }
         }
         return false;
+    }
+
+    /**
+     * Kills the player, which should end the game and give the user the opportunity to restart
+     */
+    public void kill() {
+        m_alive = false;
+    }
+
+    /**
+     * @return Whether the player is currently alive
+     */
+    public boolean isAlive() {
+        return m_alive;
     }
 }
