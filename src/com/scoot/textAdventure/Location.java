@@ -19,15 +19,15 @@ public class Location {
         }
     }
 
-    public Collection<Interaction> getInteractions() {
+    public final Collection<Interaction> getInteractions() {
         return k_interactions.values();
     }
 
-    public boolean enter(Player player) {
+    public final boolean enter(Player player) {
         return k_entryInteraction.enter(player);
     }
 
-    public boolean tryInteraction(Player player, String command) {
+    public final boolean tryInteraction(Player player, String command) {
         if (k_interactions.get(command) == null) {
             return false;
         }
