@@ -66,44 +66,42 @@ public class Game {
         System.out.println("Enter COMMANDS to see what you can do.");
 
         while (m_player.isAlive()) {
-            while (true) {
-                System.out.print("> ");
-                input = kb.nextLine();
-                if (input.isEmpty()) {
-                    continue;
-                }
+            System.out.print("> ");
+            input = kb.nextLine();
+            if (input.isEmpty()) {
+                continue;
+            }
 
-                switch (input) {
-                    case "COMMANDS":
-                        System.out.println("Type MOVE [CARDINAL DIRECTION] to move between locations");
-                        System.out.println("Type SEE INTERACTIONS to see what interactions are available");
-                        break;
-                    case "MOVE NORTH":
-                        movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate(), m_player.getCoordinates().getYCoordinate() - 1), false);
-                        break;
-                    case "MOVE SOUTH":
-                        movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate(), m_player.getCoordinates().getYCoordinate() + 1), false);
-                        break;
-                    case "MOVE EAST":
-                        movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate() + 1, m_player.getCoordinates().getYCoordinate()), false);
-                        break;
-                    case "MOVE WEST":
-                        movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate() - 1, m_player.getCoordinates().getYCoordinate()), false);
-                        break;
-                    case "SEE INTERACTIONS":
-                        String toPrint = "";
-                        for (Interaction interaction : m_map.getLocation(m_player.getCoordinates()).getInteractions()) {
-                            toPrint += interaction.getCommand() + ", ";
-                        }
-                        toPrint = toPrint.substring(0, toPrint.length() - 2);
-                        System.out.println(toPrint);
-                        break;
-                    case "CLOSE GAME":
-                        m_player.kill();
-                        break;
-                    default:
-                        System.out.println("Command not valid, try again");
-                }
+            switch (input) {
+                case "COMMANDS":
+                    System.out.println("Type MOVE [CARDINAL DIRECTION] to move between locations");
+                    System.out.println("Type SEE INTERACTIONS to see what interactions are available");
+                    break;
+                case "MOVE NORTH":
+                    movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate(), m_player.getCoordinates().getYCoordinate() - 1), false);
+                    break;
+                case "MOVE SOUTH":
+                    movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate(), m_player.getCoordinates().getYCoordinate() + 1), false);
+                    break;
+                case "MOVE EAST":
+                    movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate() + 1, m_player.getCoordinates().getYCoordinate()), false);
+                    break;
+                case "MOVE WEST":
+                    movePlayer(m_player, new CoordinatePair(m_player.getCoordinates().getXCoordinate() - 1, m_player.getCoordinates().getYCoordinate()), false);
+                    break;
+                case "SEE INTERACTIONS":
+                    String toPrint = "";
+                    for (Interaction interaction : m_map.getLocation(m_player.getCoordinates()).getInteractions()) {
+                        toPrint += interaction.getCommand() + ", ";
+                    }
+                    toPrint = toPrint.substring(0, toPrint.length() - 2);
+                    System.out.println(toPrint);
+                    break;
+                case "CLOSE GAME":
+                    m_player.kill();
+                    break;
+                default:
+                    System.out.println("Command not valid, try again");
             }
         }
         // closes scanner, make sure this line is at the end
