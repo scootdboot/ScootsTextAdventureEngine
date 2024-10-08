@@ -98,6 +98,9 @@ public class Game {
                         toPrint = toPrint.substring(0, toPrint.length() - 2);
                         System.out.println(toPrint);
                         break;
+                    case "CLOSE GAME":
+                        m_player.kill();
+                        break;
                     default:
                         System.out.println("Command not valid, try again");
                 }
