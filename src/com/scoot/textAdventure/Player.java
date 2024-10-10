@@ -1,15 +1,16 @@
 package com.scoot.textAdventure;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 public class Player {
     private final ArrayList<Item> m_inventory;
     private final ArrayList<Feat> m_feats;
 
-    private CoordinatePair m_currentLocation;
+    private Point m_currentLocation;
     private boolean m_alive;
 
-    public Player(CoordinatePair defaultLocation) {
+    public Player(Point defaultLocation) {
         m_inventory = new ArrayList<Item>();
         m_feats = new ArrayList<Feat>();
 
@@ -19,25 +20,15 @@ public class Player {
 
     /**
      * Moves the player to the destination by calling the relevant enter method
-     * @param destLocation A CoordinatePair object containing the location that the player needs to move to
+     * @param destPlace A Place object containing the location that the player needs to move to
      * @return Whether the player failed to move to the destination
      */
-    public boolean move(Location destLocation) {
-        return destLocation.enter(this);
+    public boolean move(Place destPlace) {
+        return destPlace.enter(this);
     }
 
-    public boolean isAdjacent(CoordinatePair other) {
-        int absoluteXDifference = Math.abs(m_currentLocation.getXCoordinate() - other.getXCoordinate());
-        int absoluteYDifference = Math.abs(m_currentLocation.getYCoordinate() - other.getYCoordinate());
-        return absoluteXDifference + absoluteYDifference == 1;
-    }
-
-    public CoordinatePair getCoordinates() {
+    public Point getCoordinates() {
         return m_currentLocation;
-    }
-
-    public void setCoordinates(CoordinatePair newCoordinates) {
-        m_currentLocation = newCoordinates;
     }
 
     public void addItem(Item item) {

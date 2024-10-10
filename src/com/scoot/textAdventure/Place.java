@@ -6,11 +6,11 @@ import java.util.HashMap;
 import com.scoot.textAdventure.interactions.EntranceInteraction;
 import com.scoot.textAdventure.interactions.Interaction;
 
-public class Location {
+public class Place {
     private final EntranceInteraction k_entryInteraction;
     private final HashMap<String, Interaction> k_interactions;
 
-    public Location(EntranceInteraction entryInteraction, Interaction...interactions) {
+    public Place(EntranceInteraction entryInteraction, Interaction...interactions) {
         k_entryInteraction = entryInteraction;
 
         k_interactions = new HashMap<String, Interaction>();

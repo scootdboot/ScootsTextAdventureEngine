@@ -1,10 +1,10 @@
-package com.scoot.textAdventure.locations;
+package com.scoot.textAdventure.places;
 
 import com.scoot.textAdventure.interactions.Interaction;
-import com.scoot.textAdventure.Location;
+import com.scoot.textAdventure.Place;
 import com.scoot.textAdventure.Player;
 
-public class ExampleLocation extends Location {
+public class ExamplePlace extends Place {
     private static boolean entranceInteraction(Player player) {
         System.out.println("enter initial location");
         return true;
@@ -21,7 +21,7 @@ public class ExampleLocation extends Location {
         }
     }
 
-    public ExampleLocation(Player player) {
-        super(ExampleLocation::entranceInteraction, new ExampleInteraction());
+    public ExamplePlace(Player player) {
+        super(ExamplePlace::entranceInteraction, new ExampleInteraction());
     }
 }

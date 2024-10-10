@@ -1,23 +1,25 @@
 package com.scoot.textAdventure;
 
+import java.awt.Point;
+
 public class Map {
-    private final Location[][] k_map;
-    private final CoordinatePair k_defaultLocation;
+    private final Place[][] k_map;
+    private final Point k_defaultLocation;
 
     private final String k_bootMessage;
 
-    public Map(Location[][] map, CoordinatePair defaultLocation, String bootMessage) {
+    public Map(Place[][] map, Point defaultLocation, String bootMessage) {
         k_map = map;
         k_defaultLocation = defaultLocation;
         k_bootMessage = bootMessage;
     }
 
-    public CoordinatePair getDefaultLocationCoordinates() {
+    public Point getDefaultLocationCoordinates() {
         return k_defaultLocation;
     }
 
-    public Location getLocation(CoordinatePair coordinatePair) {
-        return k_map[coordinatePair.getYCoordinate()][coordinatePair.getXCoordinate()];
+    public Place getPlace(Point point) {
+        return k_map[(int) point.getY()][(int) point.getX()];
     }
 
     public String getBootMessage() {
