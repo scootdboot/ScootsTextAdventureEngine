@@ -21,7 +21,7 @@ public class Player {
     /**
      * Moves the player to the destination by calling the relevant enter method
      * @param destPlace A Place object containing the location that the player needs to move to
-     * @return Whether the player failed to move to the destination
+     * @return Whether the player succeeded in trying to move to destination
      */
     public boolean move(Place destPlace) {
         return destPlace.enter(this);

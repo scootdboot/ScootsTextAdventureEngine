@@ -13,6 +13,11 @@ public class Place {
     private final EntranceInteraction m_entryInteraction;
     private final HashMap<String, Interaction> m_interactions;
 
+    /**
+     * Creates a new Place with Interactions and entry methods.
+     * @param entryInteraction A method defining EntranceInteraction
+     * @param interactions Some number of Interactions as parameters
+     */
     public Place(EntranceInteraction entryInteraction, Interaction...interactions) {
         m_entryInteraction = entryInteraction;
 
