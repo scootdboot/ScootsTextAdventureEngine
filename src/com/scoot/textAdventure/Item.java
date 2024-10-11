@@ -1,33 +1,33 @@
 package com.scoot.textAdventure;
 
 public class Item {
-    private final String k_name;
-    private final String k_description;
-    private final int k_id;
+    private final String m_name;
+    private final String m_description;
+    private final int m_id;
 
     public Item(String name, String description, int id) {
-        k_name = name;
-        k_description = description;
-        k_id = id;
+        m_name = name;
+        m_description = description;
+        m_id = id;
     }
 
     public String getName() {
-        return k_name;
+        return m_name;
     }
 
     public String getDescription() {
-        return k_description;
+        return m_description;
     }
 
     public int getID() {
-        return k_id;
+        return m_id;
     }
 
     @Override
     public String toString() {
         return "ITEM:\n" +
-            "Name: " + k_name + "\n" +
-            "Description: " + k_description + "\n" +
-            "ID: " + k_id;
+            "Name: " + m_name + "\n" +
+            "Description: " + m_description + "\n" +
+            "ID: " + m_id;
     }
 }

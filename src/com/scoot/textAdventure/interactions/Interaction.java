@@ -1,19 +1,19 @@
 package com.scoot.textAdventure.interactions;
 
 public class Interaction {
-    private final String k_command;
-    private final InteractionFunction k_interactionFunction;
+    private final String m_command;
+    private final InteractionFunction m_interactionFunction;
 
     public Interaction(String command, InteractionFunction interactionFunction) {
-        k_command = command;
-        k_interactionFunction = interactionFunction;
+        m_command = command;
+        m_interactionFunction = interactionFunction;
     }
 
     public String getCommand() {
-        return k_command;
+        return m_command;
     }
 
     public InteractionFunction getInteractionFunction() {
-        return k_interactionFunction;
+        return m_interactionFunction;
     }
 }

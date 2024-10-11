@@ -1,26 +1,26 @@
 package com.scoot.textAdventure;
 
 public class Feat {
-    private final String k_description; // will never be displayed to the user
-    private final int k_id;
+    private final String m_description; // will never be displayed to the user
+    private final int m_id;
 
     public Feat(String description, int id) {
-        k_description = description;
-        k_id = id;
+        m_description = description;
+        m_id = id;
     }
 
     public String getDescription() {
-        return k_description;
+        return m_description;
     }
 
     public int getID() {
-        return k_id;
+        return m_id;
     }
 
     @Override
     public String toString() {
         return "FEAT:\n" +
-            "ID: " + k_id + "\n" +
-            "DESCRIPTION: " + k_description;
+            "ID: " + m_id + "\n" +
+            "DESCRIPTION: " + m_description;
     }
 }
