@@ -6,7 +6,7 @@ import java.util.Scanner;
 import com.scoot.textAdventure.places.*;
 
 /**
- * This class should handle the game actually being played-the only others files that should get modified are in the places package
+ * This class should handle the game actually being played-the only others files that should get modified are in the places package in an ideal world
  */
 public class Game {
     private static Map m_map;
@@ -17,7 +17,7 @@ public class Game {
     private static void loadMap() {
         Place[][] mapArray = new Place[1][1];
         /// create Place classes to define each location if you want it to be more encapsulated
-        mapArray[0][0] = new ExamplePlace(m_player);
+        mapArray[0][0] = new ExamplePlace();
         // create map object once all the Places are defined
         m_map = new Map(mapArray, new Point(0, 0), "MAP CREATED");
         System.out.println(m_map.getBootMessage());
@@ -67,6 +67,10 @@ public class Game {
             input = kb.nextLine();
             if (input.isEmpty()) {
                 continue;
+            }
+            if (input.equals("CLOSE GAME")) {
+                System.out.println("GAME CLOSE");
+                break;
             }
         }
         // closes scanner, make sure this line is at the end

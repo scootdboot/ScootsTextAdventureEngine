@@ -4,6 +4,10 @@ import com.scoot.textAdventure.interactions.Interaction;
 import com.scoot.textAdventure.Place;
 import com.scoot.textAdventure.Player;
 
+/**
+ * This is an example for how I'd recommend creating your locations - code your own classes that extend place with noarg constructors. The code seemes much
+ * better organized this way, but there's no reason not to use Lambdas to define it in game other than code organization.
+ */
 public class ExamplePlace extends Place {
     private static boolean entranceInteraction(Player player) {
         System.out.println("enter initial location");
@@ -21,7 +25,7 @@ public class ExamplePlace extends Place {
         }
     }
 
-    public ExamplePlace(Player player) {
+    public ExamplePlace() {
         super(ExamplePlace::entranceInteraction, new ExampleInteraction());
     }
 }
